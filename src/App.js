@@ -5,7 +5,7 @@ function App() {
 
   
   const [state,setInitial]=React.useState([])
-  const [filteringTerms,setFilter]=React.useState({query:"",country:""})
+  const [filteringTerms,setFilter]=React.useState({query:"",country:"",checked:"false"})
 
 
   useEffect(
@@ -14,7 +14,8 @@ function App() {
       const defaultQuery="dev jobs"
       var emptyLoc;
       var emptyQuery;
-      if(filteringTerms.query==undefined || filteringTerms.country==undefined)
+    
+      if(filteringTerms.query=="" || filteringTerms.country=="")
       {
         emptyLoc=defaultLocation
         emptyQuery=defaultQuery
@@ -28,7 +29,22 @@ function App() {
         }
         )
         .then((response)=>response.json())
-        .then((data)=>setInitial( data.jobs_results))
+        .then((data)=>
+        {
+          var array=data.jobs_results
+          if (filteringTerms.checked==true){
+            for(var i=0;i<array.length;i++){
+              if(array[i].detected_extensions.schedule_type=="Part-time"){
+                console.log(array[i])
+                array.splice(i,1)
+        
+              }
+             
+           
+            }
+          }
+          setInitial(array)
+        })
       
 
     },[filteringTerms]
@@ -41,10 +57,17 @@ function App() {
   const checkBox=document.querySelector("#fullTime")
 
   console.log(filteringTerms)
+  console.log(filteringTerms.checked)
+  console.log(state)
 
+  
+
+  
 
   return (
+    
     <div className="App">
+  
       <div className="top_section ">
         <div className='filter_bar d-flex p-3 fit_content '>
           <input type="text" id="nameInput" name="Name" className='' placeholder='Filter by title, company, expertise..'></input>
@@ -65,9 +88,12 @@ function App() {
             <button className='search_btn px-4' onClick={()=>{
               var queryInput=NameElement.value
               var countryInput=countryElement.value
+              var checkboxState=checkBox.checked
               var object={}
               object.query=queryInput
               object.country=countryInput
+              object.checked=checkboxState
+              
               NameElement.value=""
               countryElement.value=""
               setFilter(object)
