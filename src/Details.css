@@ -13,6 +13,8 @@
     margin-left: 80px;
     width: 85%;
     margin-top: -55px;
+    display: flex;
+    flex-direction: row;
 
 
     
@@ -23,7 +25,6 @@
     color: blueviolet;
     font-family: Kumbh_regular;
     font-weight: 600;
-    
     height: fit-content;
     border-radius: 5px;
     padding:10px;
@@ -101,4 +102,9 @@ li{
     background-color: white;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+
+
+@media  (max-width:768px){
+
 }

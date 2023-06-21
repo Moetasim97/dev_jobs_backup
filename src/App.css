@@ -152,7 +152,13 @@ label{
   position: relative;
  
 }
-.collection{
+
+
+.occupationField{
+  background-color: inherit;
+}
+
+.locationField{
   background-color: inherit;
 }
 
@@ -210,15 +216,16 @@ transition: transform 0.1s linear;
 
 
 .bi.bi-brightness-high{
-position: absolute;
-top:57px;
-left: 1130px;
+background-color: inherit;
+margin-top:17px;
+margin-right: 3px;
+
 }
 
 .bi.bi-moon-fill{
-position: absolute;
-top: 57px;
-left: 1200px;
+background-color: inherit;
+margin-top:17px;
+margin-left: 3px;
 }
 
 
@@ -227,4 +234,49 @@ left: 1200px;
   border-radius: 30%;
   top: -20px;
   left: 10px;
+}
+
+
+@media  (max-width:1000px)
+{
+
+  .filter_bar{
+    left: 10%;
+    margin-top: -20px;
+    width: fit-content;
+  }
+}
+
+@media  (max-width:768px)
+{
+
+  .filter_bar{
+    left: 20%;
+    top: 5%;
+    margin-top: -20px;
+    width: 400px;
+
+  }
+
+  .locationField{
+    display: none;
+  }
+  .occupationField{
+    width: 250px;
+  }
+
+  .first_label{
+    display: none;
+  }
+
+  #fullTime{
+    display: none;
+  }
+
+  .bi.bi-geo-alt-fill{
+    display: none;
+  }
+
+ 
+
 }
