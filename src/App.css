@@ -181,6 +181,9 @@ label{
   color: #6771e3;
 }
 
+.meta_data{
+  align-items: start;
+}
 .row{
   position: relative;
 }
@@ -252,7 +255,7 @@ margin-left: 3px;
 
   .filter_bar{
     left: 20%;
-    top: 5%;
+    top: 10%;
     margin-top: -20px;
     width: 400px;
 
@@ -277,6 +280,10 @@ margin-left: 3px;
     display: none;
   }
 
+
+  .meta_data{
+    align-items: center;
+  }
  
 
 }

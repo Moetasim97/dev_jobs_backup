@@ -33,11 +33,10 @@ export default function Details ({state}){
         {Object.keys(state).length>4 ?  (
             <div className="modal_background w-100 px-4" style={MainTheme}>
                 <div className="wrap">
-            <div className="description_header d-flex border" style={secondaryTheme}>
-                
+            <div className="description_header d-flex " style={secondaryTheme}>
                 <img src={state.thumbnail} className="modal_thumbnail"/>
-                <div className="d-flex justify-content-between w-100 align-items-center p-4" >
-                    <div className="d-flex flex-column  align-items-start">
+                <div className="generic_flex  w-100  p-4" >
+                    <div className="d-flex  meta_data flex-column mb-2">
                         <div className="h6">
                         {state.company_name}
                         </div>
@@ -54,9 +53,9 @@ export default function Details ({state}){
                 </div>
 
                <div className="wrap">
-                <div className="modal_body mt-4 border p-5 " style={secondaryTheme}>
-                        <div className="d-flex justify-content-between mb-5">
-                            <div className="d-flex flex-column">
+                <div className="modal_body mt-4  p-5 " style={secondaryTheme}>
+                        <div className=" another_flex  mb-5">
+                            <div className="d-flex flex-column mb-5">
                                 <div className="d-flex">
                                     <div className="text-secondary">
                                     {state.detected_extensions.posted_at} .
@@ -91,23 +90,22 @@ export default function Details ({state}){
                         <div className="h5 mb-4 mt-3" align="start">
                              What You will do
                         </div>
-                        {state.job_highlights[1].items ? state.job_highlights[1].items.map((requirement)=>{
+                        {state.job_highlights.length> 1  ?  state.job_highlights[1].items.map((requirement)=>{
                             return(
                                 <li className="another_li text-secondary" align="start" >{requirement}</li>
                             )
                            
                         }):
+                        <div></div>
                         
-                        [].map((item)=>{
-                            <div>{item}</div>
-                        })}
+                        }
                       
                     </div>
                </div>
 
                <div className="d-flex w-100 ">
-             <div className="d-flex justify-content-between custom_dimensions " style={secondaryTheme}>
-             <div className="d-flex flex-column align-items-start">
+             <div className=" justify-content-between custom_dimensions " style={secondaryTheme}>
+             <div className=" align-items-start last_flex">
                     <div>
                         {state.title}
                     </div>
@@ -115,7 +113,7 @@ export default function Details ({state}){
                         {state.company_name}
                     </div>
                 </div>
-                <a href={state.related_links[0].link} className="big_link ">
+                <a href={state.related_links[0].link} className="big_link last ">
                             Apply Now
                 </a>
              </div>
