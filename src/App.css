@@ -37,8 +37,9 @@ width: fit-content;
 .App {
   text-align: center;
   background-color: #f4f6f8;
-  height: 100%;
+  height: fit-content;
   width: 100%;
+
 
 }
 
@@ -153,6 +154,7 @@ label{
 
 .middle_section{
   margin-top: 80px;
+  height: fit-content;
 }
 
 .company{
@@ -160,4 +162,8 @@ label{
   font-weight: 700;
   font-size: 14px;
   color: #6771e3;
+}
+
+.row{
+  position: relative;
 }

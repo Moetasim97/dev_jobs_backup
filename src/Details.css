@@ -1,0 +1,93 @@
+.modal_background{
+
+    position:absolute;
+    background-color: #f4f6f8 ;
+    top:-120px;
+    height: 300%;
+    padding-right:20px;
+    display: block;
+}
+
+
+.description_header{
+    background-color:white;
+    position: absolute;
+    width: 105%;
+
+    
+}
+
+.links{
+    text-decoration: none;
+    color: blueviolet;
+    font-family: Kumbh_regular;
+    font-weight: 600;
+    background-color: #eff0fc ;
+    height: fit-content;
+    border-radius: 5px;
+    padding:10px;
+
+
+
+}
+
+.modal_thumbnail{
+width:100px;   
+height: 100px;
+}
+
+.modal_body{
+    position: absolute;
+    width: 105%;
+    background-color: white;
+}
+.modal_title{
+    font-family: Kumbh_ExtraBold;
+
+}
+.big_link{
+    background-color: #5964e0;
+    color: white;
+    font-size: 16px;
+    padding-left:30px;
+    padding-right:30px;
+    padding-top:13px;
+    padding-bottom:13px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: Kumbh_Bold;
+    font-weight: 600;
+    height: fit-content;
+    margin-top: 15px;
+
+}
+.big_link:hover{
+    background-color:#6771e3 ;
+}
+.job_description{
+    font-family: Kumbh_regular;
+
+}
+li::before{
+
+    content: "\2022";  
+    color:#5964e0; 
+    margin-right: 15px;
+    height: 10px;
+    width: 10px;
+    
+
+}
+.another_li li{
+    display: list-item;
+    
+}
+.another_li li::before{
+    content: none;
+}
+
+
+li{
+    display: block;
+    margin-bottom: 15px;
+}
