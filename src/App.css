@@ -22,9 +22,7 @@
 .secondary_theme_light{
   background-color: #f4f6f8;
 }
-.primary_theme_dark{
-  background-color: #121721;
-}
+
 
 .secondary_theme_dark{
   background-color: #19202d;
@@ -36,13 +34,12 @@ width: fit-content;
 
 .App {
   text-align: center;
-  background-color: #f4f6f8;
+  position: relative;
   height: fit-content;
   width: 100%;
 
 
 }
-
 
 .top_section{
   font-style: Kumbh_regular;
@@ -57,9 +54,9 @@ width: fit-content;
 
 .filter_bar{
   position:absolute;
-  top: 20%;
+  top: 11%;
   left: 17%;
-  background-color: white;
+ 
   border-radius: 5px;
 }
 
@@ -144,13 +141,27 @@ label{
   font-size: 14px;
 }
 
-
+.card_title.dark{
+  color:white
+}
 
 .card_wrapper{
   height: 190px;
   padding: 20px;
   border-radius: 5px;
+  position: relative;
+ 
 }
+.collection{
+  background-color: inherit;
+}
+
+.first_label.white{
+  color: white;
+}
+
+
+
 
 .middle_section{
   margin-top: 80px;
@@ -166,4 +177,54 @@ label{
 
 .row{
   position: relative;
+}
+
+.ball{
+width:15px;
+height: 15px;
+background-color: #5964e0;
+position:absolute;
+top: 2px;
+left: 2px;
+border-radius: 50%;
+transition: transform 0.1s linear;
+}
+
+.togglerLabel{
+  position: relative;
+  width:35px;
+  height:20px;
+  background-color: white;
+  border-radius: 20px;
+
+
+}
+
+.checkbox{
+  display: none;
+}
+
+.checkbox:checked+ .togglerLabel .ball{
+  transform: translateX(15px);
+}
+
+
+.bi.bi-brightness-high{
+position: absolute;
+top:57px;
+left: 1130px;
+}
+
+.bi.bi-moon-fill{
+position: absolute;
+top: 57px;
+left: 1200px;
+}
+
+
+.job_thumbnail{
+  position: absolute;
+  border-radius: 30%;
+  top: -20px;
+  left: 10px;
 }

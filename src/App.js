@@ -3,12 +3,21 @@ import "./App.css"
 import Main from "./Main"
 import Details from "./Details"
 import {Route,Routes} from "react-router-dom"
+export const ThemeContext=React.createContext()
 function App() {
 
   
   const [state,setInitial]=React.useState([])
   const [filteringTerms,setFilter]=React.useState({query:"",country:"",checked:"false"})
+  const[darkTheme,setDarkTheme]=React.useState(false)
+  
 
+  const toggleTheme=()=>{
+    setDarkTheme(prevState=>!prevState)
+  }
+
+
+  
 
   const settingFilter=(object)=>{
     setFilter(object)
@@ -57,21 +66,18 @@ function App() {
 
 
 
-
-
-  console.log(filteringTerms)
-  console.log(filteringTerms.checked)
-  console.log(state)
+console.log(darkTheme)
 
   
 
   
 
   return (
-    
+    <ThemeContext.Provider value={darkTheme}>
    <Routes>
-    <Route path='/' element={<Main state={state} filter={settingFilter}/>}/>
+    <Route path='/' element={<Main state={state} toggler={toggleTheme} filter={settingFilter}/>}/>
    </Routes>
+   </ThemeContext.Provider>
   );
 }
 
