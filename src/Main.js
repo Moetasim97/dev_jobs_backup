@@ -3,7 +3,7 @@ import Job from "./Job.js"
 import Details from "./Details.js"
 import { ThemeContext } from "./App.js"
 import {useContext} from "react"
-import { dark } from "@mui/material/styles/createPalette.js"
+
 
 
 export default function Main({state,filter,toggler}){
