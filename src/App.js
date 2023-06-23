@@ -29,7 +29,7 @@ function App() {
       var emptyLoc;
       var emptyQuery;
     
-      if(filteringTerms.query=="" || filteringTerms.country=="")
+      if(filteringTerms.query=="" && filteringTerms.country=="")
       {
         emptyLoc=defaultLocation
         emptyQuery=defaultQuery
@@ -66,7 +66,7 @@ function App() {
 
 
 
-console.log(darkTheme)
+console.log(state)
 
   
 
